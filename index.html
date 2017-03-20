@@ -52,10 +52,11 @@ div.tab button.active {
 /* Style the tab content */
 .tabcontent {
     float: left;
-    padding: 0px 02px;
-    border: 1px solid #ccc;
+    padding-top: 300px;
+    border: 5px solid #ccc;
     width: 70%;
     border-left: none;
+    border-right: none;
     height: 300px;
 }
 </style>
@@ -64,23 +65,28 @@ div.tab button.active {
 
 <div class="tab">
   <button class="tablinks" onclick="openEvent(event, 'Home')" id="defaultOpen">Home</button>
-  <button class="tablinks" onclick="openEvent(event, 'Services')">Services</button>
   <button class="tablinks" onclick="openEvent(event, 'About')">About</button>
+  <button class="tablinks" onclick="openEvent(event, 'Services')">Services</button>
+  <button class="tablinks" onclick="openEvent(event, 'A History Of Success')">A History Of Success</button>
 </div>
 
 <div id="Home" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Services" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
+  <h3>Home</h3>
 </div>
 
 <div id="About" class="tabcontent">
-  <h3>Tokyo</h3>
+  <h3>Aboout</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Services" class="tabcontent">
+  <h3>Services</h3>
   <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<div id="A History Of Success" class="tabcontent">
+  <h3>A History Of Success</h3>
+    <p><b>Success In The Paper</b></p>
 </div>
 
 <script>
