@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<Head>
+    <link rel="icon" href="logo(sb).png">
+</Head>
+    
+<style>
+    body {
+        font-family: "copperplate", sans, serif;
+        background-color: white; 
+    }
+    
+    ul.tab {
+        list-style-type: none;
+        margin: 0;
+        padding: 0px 175px;
+        overflow: hidden;
+        border-bottom: 1px solid black;
+        background-color: white;
+        position: absolute;
+        top:0px;
+        left:500px;
+        right:-10px;
+    }
+    a.hover{
+        color:white;
+    }
+    a.active{
+        color:white;
+    }
+    /* Float the list items side by side */
+    ul.tab li {
+        float: right;
+        color: darkblue;
+    }
+    /* Style the links inside the list items */
+    ul.tab li a {
+        display: inline-block;
+        color: darkblue;
+        text-align: center;
+        padding: 28px 20px;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+    /* Change background color of links on hover */
+    ul.tab li a:hover {
+        background-color: darkblue;
+        color: white;
+    }
+    /* Create an active/current tablink class */
+    ul.tab li a:focus, .active {
+        background-color: darkblue;
+        color:white;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        position: absolute;
+        top:75px;
+        bottom:200px;
+        left:0px;
+        right:0px;
+        background-color: white;
+    }
+    
+    h1.serif {
+        font-family: "Arial Black", Gadget, sans-serif;
+    } 
+    
+    hr { 
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
+    } 
+    
+    div.gallery {
+        border: 0px solid #ccc;
+    }
+    div.gallery:hover {
+        background-color: darkblue;
+        color:white;
+    }
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+    *{
+        box-sizing: border-box;
+    }
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+    @media only screen and (max-width: 700px){
+        .responsive {
+            width: 49.99999%;
+            margin: 6px 0;
+        }
+    }
+    @media only screen and (max-width: 500px){
+        .responsive {
+            width: 100%;
+        }
+    }
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+<body>
+    <div>
+        <img src="logo(sb).png" alt="info" style="width:80px;height:80px;position:fixed;top:5px;left:20px;" >
+    </div>
+    
+    <div>
+        <img src="logo(sb).png" alt="info" style="width:300px;height:300px;position:fixed;bottom:200px;left:570px;" >
+    </div>
+    
+    <div>
+        <img src="bottombar(sb).png" alt="info" style="width:1441px;height:60px;position:fixed;bottom:0px;left:0px;" >
+    </div>
+    
+    <ul class="tab">
+      <li><a href="#" class="tablinks" onclick="openEvent(event, 'About')"><font>About</font></a></li>
+      <li><a href="#" class="tablinks" onclick="openEvent(event, 'Services')"><font>Services</font></a></li>
+      <li><a href="#" class="tablinks" onclick="openEvent(event, 'Home')"><font>Home</font></a></li>
+    </ul>
+    
+    <div id="About" class="tabcontent">
+      <div>
+        <img src="homephoto(sb).jpg" alt="info" style="width:1441px;height:670px;position:fixed;left:0px;" >
+       </div>
+      <h3><font color="darkblue"><center>Who we are</center></font></h3>
+        <hr>
+        <p><b><font color="darkblue">History</font></b></p>
+            <p>A History of business.</p>
+            <p></p>
+        <p><b><font color="darkblue">Owner</font></b></p>
+            <p>About the owner</p>
+            <p></p>
+     </div>
+
+    <div id="Services" class="tabcontent">
+      <h3><font color="darkblue"><center>Services</center></font></h3>
+        <hr>
+          <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="service1.jpg">
+              <img src="service1.jpg" alt="service1" width="300" height="200" >
+            </a>
+            <div class="desc">Discription of service provided</div>
+          </div>
+        </div>
+        
+         <div id="Home" class="tabcontent">
+         </div>
+
+
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="service2.jpg">
+              <img src="service2.jpg" alt="service2" width="600" height="400">
+            </a>
+            <div class="desc">Discription of service provided</div>
+          </div>
+        </div>
+
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="service3.png">
+              <img src="service3.png" alt="service3" width="600" height="400">
+            </a>
+            <div class="desc">Discription of service provided</div>
+          </div>
+        </div>   
+    </div> 
+<script>
+function openEvent(evt, eventName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tabcontent.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(eventName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script> 
+</body>
+</html> 
