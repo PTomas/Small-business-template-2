@@ -100,11 +100,17 @@ div.tab button.active {
 
 <script>
 function openEvent(event, eventName) {
-    var i, tabcontent, tablinks;
+    var i, tabcontent, homecontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
+    
+    homecontent = document.getElementsByClassName("homecontent");
+    for (i = 0; i < homecontent.length; i++) {
+        homecontent[i].style.display = "none";
+    }
+    
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
